@@ -5,8 +5,6 @@ int s, ckey;
 
 int main(){
 
-
-
 printf("Podaj litere: \n");
 scanf("%s",&x);
 int c = x;
