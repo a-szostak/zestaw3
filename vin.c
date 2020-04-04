@@ -1,4 +1,4 @@
-#include <stdio.h>    // 65-90 duże litery, 97-122 - małe
+#include <stdio.h>    
 
 char x, vkey;
 int s, ckey;
