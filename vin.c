@@ -9,29 +9,52 @@ int main(){
 
 printf("Podaj litere: \n");
 scanf("%s",&x);
+int c = x;
+
+if(x<91){
+  x = x + 32;
+}
 
 printf("\nDostepne szyfry: \n1 - Vigenere'a \n2 - Cezara \n\nWybieram nr: ");
 scanf("%d", &s);
 
 if (s==1){
-  printf("Podaj klucz (litera): ");
+  printf("\nPodaj klucz (litera): ");
   scanf("%s", &vkey);
   int b = vkey;
+  if(vkey<91){
+    vkey = vkey + 32;
+  }
+  vkey = vkey - 97;
+  x = x + vkey;
+  if (x>122){
+    x = x - 26;
+  }
+  char a = (char)x;
+  printf("\nLitera po zaszyfrowaniu: ");
+  printf("%c", x);
+
 
 }
 else if (s==2){
   printf("Podaj klucz (liczba calkowita): ");
   scanf("%d", &ckey);
-  int n = x;
   ckey = ckey%26;
   x = x + ckey;
+  if (x>122){
+    x = x - 26;
+  }
   char a = (char)x;
   printf("\nLitera po zaszyfrowaniu: ");
   printf("%c", x);
 
 }
+
 else{
-  printf("Musisz wybrac jeden z dostepnych szyfrow!");
+  printf("\nMusisz wybrac jeden z dostepnych szyfrow!");
 }
+
+
+
   return 0;
 }
