@@ -16,7 +16,7 @@ while(i<10){
   printf("Podaj wspolrzedne(pionowa,pozioma): \n");
   scanf("%d %d",&pion, &poziom);
   if ((tab[pion-1][poziom-1]=='X') || (tab[pion-1][poziom-1]=='O') || (pion>3) || (poziom>3)){
-    printf("Nastepnym razem podaj dobre wspolrzedne!"); // jak się podało złe współrzędne, program się kończy - trzeba ponosić konsekwecje swoich czynów
+    printf("Nastepnym razem podaj dobre wspolrzedne!"); // jak się podało złe współrzędne, program się kończy - trzeba ponosić konsekwencje swoich czynów
     break;
   }
   else{
@@ -61,8 +61,19 @@ while(o>0){
           break;
         }
     }
-    if ((tab[2][2]=='X')&&(tab[1][1]=='X')){
-      tab[0][0]='O';
+    if ((tab[0][0]=='X')&&(tab[2][2]=='X')){
+      tab[1][1]='O';
+      j = 0;
+      for (a=0; a<3; a++){
+        for(b=0; b<3; b++){
+          if (tab[a][b] == 'O'){
+            j++;}}}
+        if (j==(i/2)){
+          break;
+        }
+    }
+    if ((tab[2][0]=='X')&&(tab[1][1]=='X')){
+      tab[0][2]='O';
       j = 0;
       for (a=0; a<3; a++){
         for(b=0; b<3; b++){
@@ -73,6 +84,47 @@ while(o>0){
         }
     }
 
+    if ((tab[2][0]=='X')&&(tab[0][2]=='X')){
+      tab[1][1]='O';
+      j = 0;
+      for (a=0; a<3; a++){
+        for(b=0; b<3; b++){
+          if (tab[a][b] == 'O'){
+            j++;}}}
+        if (j==(i/2)){
+          break;
+        }
+    }
+
+
+   for(a=0; a<3; a++){
+     if ((tab[a][0]=='X')&&(tab[a][2]=='X')){
+       tab[a][1] = 'O';
+     }
+   }
+   j = 0;
+   for (a=0; a<3; a++){
+     for(b=0; b<3; b++){
+       if (tab[a][b] == 'O'){
+         j++;}}}
+     if (j==(i/2)){
+       break;
+     }
+
+
+   for(a=0; a<3; a++){
+     if ((tab[0][a]=='X')&&(tab[2][a]=='X')){
+       tab[1][a] = 'O';
+     }
+   }
+   j = 0;
+   for (a=0; a<3; a++){
+     for(b=0; b<3; b++){
+       if (tab[a][b] == 'O'){
+         j++;}}}
+     if (j==(i/2)){
+       break;
+     }
 
 
     for (a=0; a<3; a++){
@@ -146,11 +198,23 @@ while(o>0){
                     break;
                   }
 
-      if(tab[1][1]==' '){
+      if(tab[1][1]==' '){   // zajęcie środka
         tab[1][1] = 'O';
+        o = 0;
       }
+   else{
+      for (a=0; a<3; a++){
+        for(b=0; b<3; b++){
+          if (tab[a][b] == ' '){
+            tab[a][b] = 'O';
+             a = 3;
+             break;}
+           }
+          }o = 0;
+        }
 
-o = 0;
+
+
 }
   }
 printf("\n_____ _____ _____");
