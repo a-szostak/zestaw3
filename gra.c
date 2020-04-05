@@ -5,13 +5,6 @@ char tab[3][3] = {{"   "},
 {"   "}};
 int pion, poziom, a, b,i = 1,j;
 
-void check(int a, int b, int i, int j) {  // funkcja sprawdzająca ilość kółek w rundzie
-  for (a=0; a<3; a++){
-    int j = 0;
-    for(b=0; b<3; b++){
-      if (tab[a][b] == 'O'){
-        j++;}}}
-    }
 
 int main(){
 
@@ -30,37 +23,54 @@ while(i<10){
     tab[pion-1][poziom-1] = 'X' ;
   }}
   else {
-    tab[2][0] = 'O';
+
+
 
 int o = 1;
 while(o>0){
     if((tab[0][0]=='X')&&(tab[1][1]=='X')){
       tab[2][2] = 'O';
-      check(0,0,i,0);
-      if (j==(i/2)){
-        break;
-      }
+      j = 0;
+      for (a=0; a<3; a++){
+        for(b=0; b<3; b++){
+          if (tab[a][b] == 'O'){
+            j++;}}}
+        if (j==(i/2)){
+          break;
+        }
     }
     else if((tab[2][2]=='X')&&(tab[1][1]=='X')){
       tab[0][0] = 'O';
-      check(0,0,i,0);
-      if (j==(i/2)){
-        break;
-      }
+      j = 0;
+      for (a=0; a<3; a++){
+        for(b=0; b<3; b++){
+          if (tab[a][b] == 'O'){
+            j++;}}}
+        if (j==(i/2)){
+          break;
+        }
     }
     if ((tab[0][2]=='X')&&(tab[1][1]=='X')){
       tab[2][0]='O';
-      check(0,0,i,0);
-      if (j==(i/2)){
-        break;
-      }
+      j = 0;
+      for (a=0; a<3; a++){
+        for(b=0; b<3; b++){
+          if (tab[a][b] == 'O'){
+            j++;}}}
+        if (j==(i/2)){
+          break;
+        }
     }
     if ((tab[2][2]=='X')&&(tab[1][1]=='X')){
       tab[0][0]='O';
-      check(0,0,i,0);
-      if (j==(i/2)){
-        break;
-      }
+      j = 0;
+      for (a=0; a<3; a++){
+        for(b=0; b<3; b++){
+          if (tab[a][b] == 'O'){
+            j++;}}}
+        if (j==(i/2)){
+          break;
+        }
     }
 
 
@@ -73,10 +83,14 @@ while(o>0){
         if((f==2)&&(tab[a][0]=='X')){
           tab[a][2] = 'O' ;
         }}}}
-        check(0,0,i,0);
-        if (j==(i/2)){
-          break;
-        }
+        j = 0;
+        for (a=0; a<3; a++){
+          for(b=0; b<3; b++){
+            if (tab[a][b] == 'O'){
+              j++;}}}
+          if (j==(i/2)){
+            break;
+          }
 
         for (a=2; a>=0; a--){
           int h = 0;
@@ -87,10 +101,14 @@ while(o>0){
 
               tab[a][0] = 'O' ;
             }}}}
-          check(0,0,i,0);
-          if (j==(i/2)){
-            break;
-          }
+            j = 0;
+            for (a=0; a<3; a++){
+              for(b=0; b<3; b++){
+                if (tab[a][b] == 'O'){
+                  j++;}}}
+              if (j==(i/2)){
+                break;
+              }
 
 
 
@@ -102,10 +120,14 @@ while(o>0){
             if((g==2)&&(tab[0][b]=='X')){
               tab[2][b] = 'O' ;
             }}}}
-            check(0,0,i,0);
-            if (j==(i/2)){
-              break;
-            }
+            j = 0;
+            for (a=0; a<3; a++){
+              for(b=0; b<3; b++){
+                if (tab[a][b] == 'O'){
+                  j++;}}}
+              if (j==(i/2)){
+                break;
+              }
 
             for (b=2; b>=0; b--){
               int l = 0;
@@ -115,11 +137,18 @@ while(o>0){
                 if((l==2)&&(tab[2][b]=='X')){
                   tab[0][b] = 'O' ;
                 }}}}
-                check(0,0,i,0);
-                if (j==(i/2)){
-                  break;
-                }
+                j = 0;
+                for (a=0; a<3; a++){
+                  for(b=0; b<3; b++){
+                    if (tab[a][b] == 'O'){
+                      j++;}}}
+                  if (j==(i/2)){
+                    break;
+                  }
 
+      if(tab[1][1]==' '){
+        tab[1][1] = 'O';
+      }
 
 o = 0;
 }
@@ -145,14 +174,14 @@ for (a=0; a<3; a++){
     if (tab[a][b] == 'X'){
       d++;}
     if(d==3){
-      printf("\nKrzyzyk wygral");
+      printf("\nWYGRANA!");
       i = 10;
       }
 
   else if(tab[a][b] == 'O'){
       e++;}
     if (e==3){
-      printf("\nKolko wygralo");
+      printf("\nPRZEGRALAS XDDDD");
       i = 10;
       }
     }
@@ -165,14 +194,14 @@ for (a=0; a<3; a++){
       if (tab[a][b] == 'X'){
         d++;}
       if(d==3){
-        printf("\nKrzyzyk wygral");
+        printf("\nWYGRANA!");
         i = 10;
         }
 
     else if(tab[a][b] == 'O'){
         e++;}
       if (e==3){
-        printf("\nKolko wygralo");
+        printf("\nPRZEGRALAS XDDDD");
         i = 10;
         }
       }
@@ -185,20 +214,20 @@ int d = 0, e = 0;
       if (tab[a][a] == 'O'){
           e++;}}
     if(d==3){
-        printf("\nKrzyzyk wygral");
+        printf("\nWYGRANA!");
         i = 10;}
     if(e==3){
-        printf("\nKolko wygralo");
+        printf("\nPRZEGRALAS XDDDD");
           i = 10;
         }
 
  if ((tab[0][2]=='X')&&(tab[1][1]=='X')&&(tab[2][0]=='X')){
-   printf("\nKrzyzyk wygral");
+   printf("\nWYGRANA!");
    i = 10;
  }
 
  if ((tab[0][2]=='O')&&(tab[1][1]=='O')&&(tab[2][0]=='O')){
-   printf("\nKolko wygralo");
+   printf("\nPRZEGRALAS XDDDD");
    i = 10;
  }
 
