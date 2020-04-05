@@ -1,4 +1,4 @@
-#include <stdio.h>    // 65-90 duże litery, 97-122 - małe
+#include <stdio.h>    
 
 char x, vkey;
 int s, ckey;
@@ -13,7 +13,7 @@ if(x<91){
   x = x + 32;
 }
 
-printf("\nDostepne szyfry: \n1 - Vigenere'a \n2 - Cezara \n\nWybieram nr: ");
+printf("\nDostepne szyfry: \n1 - Vinegere'a \n2 - Cezara \n\nWybieram nr: ");
 scanf("%d", &s);
 
 if (s==1){
