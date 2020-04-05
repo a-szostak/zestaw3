@@ -10,7 +10,7 @@ int main(){
 
 printf("Kolko i krzyzyk!\n");
 
-while(i<10){
+while(i<10){ // rundy gry
 
   if (i%2==1){
   printf("Podaj wspolrzedne(pionowa,pozioma): \n");
@@ -27,7 +27,7 @@ while(i<10){
 
 
 int o = 1;
-while(o>0){
+while(o>0){    //szukanie dobrego miejsca na postawienie O, żeby zablkokować X
     if((tab[0][0]=='X')&&(tab[1][1]=='X')){
       tab[2][2] = 'O';
       j = 0;
@@ -197,7 +197,7 @@ while(o>0){
                   if (j==(i/2)){
                     break;
                   }
-
+// jeśli nie ma okazji do blokowania:
       if(tab[1][1]==' '){   // zajęcie środka
         tab[1][1] = 'O';
         o = 0;
@@ -205,7 +205,7 @@ while(o>0){
    else{
       for (a=0; a<3; a++){
         for(b=0; b<3; b++){
-          if (tab[a][b] == ' '){
+          if (tab[a][b] == ' '){    // szukanie wolnego miejsca na O
             tab[a][b] = 'O';
              a = 3;
              break;}
@@ -224,7 +224,7 @@ printf("  |  %c",tab[0][2]);
 printf("  |\n_____|_____|_____|");
 printf("\n     |     |     |\n  %c",tab[1][0]);
 printf("  |  %c",tab[1][1]);
-printf("  |  %c",tab[1][2]);
+printf("  |  %c",tab[1][2]);                           // wyświetlanie planszy
 printf("  |\n_____|_____|_____|");
 printf("\n     |     |     |\n  %c",tab[2][0]);
 printf("  |  %c",tab[2][1]);
@@ -232,6 +232,7 @@ printf("  |  %c",tab[2][2]);
 printf("  |\n_____|_____|_____|\n\n");
 
 
+// sprawdzanie, czy ktoś nie wygrał
 for (a=0; a<3; a++){
   int d = 0,e = 0;
   for(b=0; b<3; b++){
@@ -245,7 +246,7 @@ for (a=0; a<3; a++){
   else if(tab[a][b] == 'O'){
       e++;}
     if (e==3){
-      printf("\nPRZEGRALAS XDDDD");
+      printf("\nPRZEGRANA :(");
       i = 10;
       }
     }
@@ -265,7 +266,7 @@ for (a=0; a<3; a++){
     else if(tab[a][b] == 'O'){
         e++;}
       if (e==3){
-        printf("\nPRZEGRALAS XDDDD");
+        printf("\nPRZEGRANA :(");
         i = 10;
         }
       }
@@ -281,7 +282,7 @@ int d = 0, e = 0;
         printf("\nWYGRANA!");
         i = 10;}
     if(e==3){
-        printf("\nPRZEGRALAS XDDDD");
+        printf("\nPRZEGRANA :(");
           i = 10;
         }
 
@@ -291,7 +292,7 @@ int d = 0, e = 0;
  }
 
  if ((tab[0][2]=='O')&&(tab[1][1]=='O')&&(tab[2][0]=='O')){
-   printf("\nPRZEGRALAS XDDDD");
+   printf("\nPRZEGRANA :(");
    i = 10;
  }
 
